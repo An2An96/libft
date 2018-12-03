@@ -2,11 +2,14 @@ NAME = libft.a
 FLAGS = -Wall -Wextra -Werror -I. -c
 FILES = ft_strlen.c \
 		ft_strcat.c \
+		ft_strncat.c \
 		ft_memset.c \
 		ft_bzero.c \
-		ft_strdup.c
+		ft_strdup.c \
+		ft_strcpy.c \
+		ft_strncpy.c
 
-$(NAME):
+$(NAME): copy
 	gcc $(FLAGS) $(FILES)
 	ar rc $(NAME) *.o
 	ranlib $(NAME)
@@ -24,5 +27,6 @@ clean:
 
 fclean: clean
 	rm -f *.o
+	rm -f *.c
 
 re: fclean all

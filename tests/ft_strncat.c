@@ -1,4 +1,4 @@
-void	test_ft_strcat()
+void	test_ft_strncat()
 {
 	char	src[50] = "This is source",
 			dest[50] = "This is destination";
@@ -6,8 +6,8 @@ void	test_ft_strcat()
 	char	o_src[50] = "This is source",
 			o_dest[50] = "This is destination";
 
-	ft_strcat(dest, src);
-	strcat(o_dest, o_src);
+	ft_strncat(dest, src, 7);
+	strncat(o_dest, o_src, 7);
 	if (strcmp(o_dest, dest))
 	{
 		printf("[ft_strcat] Test 1 error\n");
