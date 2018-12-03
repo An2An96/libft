@@ -8,6 +8,7 @@
 #include "ft_strdup.c"
 #include "ft_strncpy.c"
 #include "ft_strncat.c"
+#include "ft_strlcat.c"
 
 int	main(int argc, char **argv)
 {
@@ -16,5 +17,6 @@ int	main(int argc, char **argv)
 	test_ft_strncat();
 	test_ft_strdup();
 	test_ft_strncpy();
+	test_ft_strlcat();
 	return (0);
 }

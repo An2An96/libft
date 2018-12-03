@@ -3,6 +3,7 @@ FLAGS = -Wall -Wextra -Werror -I. -c
 FILES = ft_strlen.c \
 		ft_strcat.c \
 		ft_strncat.c \
+		ft_strlcat.c \
 		ft_memset.c \
 		ft_bzero.c \
 		ft_strdup.c \
