@@ -9,6 +9,9 @@
 #include "ft_strncpy.c"
 #include "ft_strncat.c"
 #include "ft_strlcat.c"
+#include "ft_strchr.c"
+#include "ft_strrchr.c"
+#include "ft_strstr.c"
 
 int	main(int argc, char **argv)
 {
@@ -18,5 +21,8 @@ int	main(int argc, char **argv)
 	test_ft_strdup();
 	test_ft_strncpy();
 	test_ft_strlcat();
+	test_ft_strchr();
+	test_ft_strrchr();
+	test_ft_strstr();
 	return (0);
 }

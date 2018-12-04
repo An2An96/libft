@@ -23,6 +23,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strdup(const char *src);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
+char	*ft_strchr(const char *src, int ch);
+char	*ft_strrchr(const char *src, int ch);
+char	*ft_strstr(const char *haystack, const char *needle);
 
 void	*ft_memset(void *str, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
