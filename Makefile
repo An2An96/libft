@@ -23,6 +23,7 @@ all: $(NAME)
 
 copy:
 	cp -f libc/*.c .
+	cp -f additional/*.c .
 
 test: re
 	gcc -I. tests/main.c -L. -lft -o test_libft
