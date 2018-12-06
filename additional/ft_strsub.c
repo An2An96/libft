@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
 	char			*res;
 
 	res = NULL;
-	if (s && (start + len - 1) <= ft_strlen(s))
+	if (s && (start + len) <= ft_strlen(s))
 	{
 		res = ft_strnew(len);
 		if (res)
