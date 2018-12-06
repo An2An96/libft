@@ -20,29 +20,34 @@ static int	ft_is_invisible_char(char c)
 
 int			ft_atoi(const char *str)
 {
-	char	negative;
-	int		result;
-	int		i;
-	char	discharge;
+	char		negative;
+	long long	result;
+	int			i;
+	char		discharge;
 
 	i = 0;
 	while (ft_is_invisible_char(str[i]))
 		i++;
 	if (str[i] == '-')
 	{
+		negative = -1;
+		i++;
+	}
+	else if (str[i] == '+')
+	{
 		negative = 1;
 		i++;
 	}
 	else
-		negative = 0;
+		negative = 1;
 	result = 0;
 	discharge = 0;
 	while (ft_isdigit(str[i]))
 	{
-		if (++discharge > 19)
-			return (negative ? (0) : (-1));
 		result = (result * 10) + (str[i] - '0');
+		if (result < 0)
+			return (-((negative + 1) / 2));
 		i++;
 	}
-	return (negative ? -result : result);
+	return ((int)result * negative);
 }
