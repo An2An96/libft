@@ -28,14 +28,9 @@ int			ft_atoi(const char *str)
 	i = 0;
 	while (ft_is_invisible_char(str[i]))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		negative = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-	{
-		negative = 1;
+		negative = 1 - (2 * (str[i] == '-'));
 		i++;
 	}
 	else
