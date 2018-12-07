@@ -38,7 +38,7 @@ static int	ft_get_words_count(char const *s, char c)
 	return (words);
 }
 
-static void	ft_allocate_words_memory(char const *s, char c, char **words)
+static int	ft_allocate_words_memory(char const *s, char c, char **words)
 {
 	unsigned int i;
 	unsigned int word_len;
@@ -51,20 +51,20 @@ static void	ft_allocate_words_memory(char const *s, char c, char **words)
 	{
 		while (i == 0 || s[i - 1] != '\0')
 		{
-			if (s[i] == c || s[i] == '\0')
+			if ((s[i] == c || s[i] == '\0') && word_len)
 			{
-				if (word_len)
-				{
-					words[word_idx] = ft_strnew(word_len);
-					word_len = 0;
-					word_idx++;
-				}
+				words[word_idx] = ft_strnew(word_len);
+				if (!words[word_idx])
+					return (0);
+				word_len = 0;
+				word_idx++;
 			}
-			else
+			else if (s[i] != c && s[i] != '\0')
 				word_len++;
 			i++;
 		}
 	}
+	return (1);
 }
 
 static void	ft_split_words(char const *s, char c, char **words)
@@ -92,6 +92,24 @@ static void	ft_split_words(char const *s, char c, char **words)
 	}
 }
 
+static char	**ft_free_words_memory(char **words, int words_count)
+{
+	int i;
+
+	if (words)
+	{
+		i = 0;
+		while (i < words_count)
+		{
+			if (words[i])
+				free(words[i]);
+			i++;
+		}
+		free(words);
+	}
+	return (NULL);
+}
+
 char		**ft_strsplit(char const *s, char c)
 {
 	char			**res;
@@ -106,8 +124,10 @@ char		**ft_strsplit(char const *s, char c)
 			res = ft_memalloc((words + 1) * sizeof(char*));
 			if (res)
 			{
-				ft_allocate_words_memory(s, c, res);
-				ft_split_words(s, c, res);
+				if (!ft_allocate_words_memory(s, c, res))
+					res = ft_free_words_memory(res, words);
+				else
+					ft_split_words(s, c, res);
 			}
 		}
 	}
