@@ -41,3 +41,5 @@ fclean: clean
 	@echo "Build removed"
 
 re: fclean all
+
+.PHONY: all copy clean fclean test re
