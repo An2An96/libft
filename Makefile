@@ -16,22 +16,28 @@ FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) $(FILES)
-	ar rc $(NAME) *.o
-	ranlib $(NAME)
+	@echo "Building..."
+	@gcc $(FLAGS) $(FILES)
+	@ar rc $(NAME) *.o
+	@ranlib $(NAME)
+	@echo "Build completed"
 
 copy:
-	cp -f libc/*.c .
-	cp -f additional/*.c .
-	cp -f bonus/*.c .
+	@cp -f libc/*.c .
+	@cp -f additional/*.c .
+	@cp -f bonus/*.c .
+	@cp -f extend/*.c .
+	@echo "Source files copied to root"
 
 test: re
 	gcc -g -I. tests/main.c -L. -lft -o test_libft
 
 clean:
-	rm -f *.o
+	@rm -f *.o
+	@echo "Object files removed"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Build removed"
 
 re: fclean all
