@@ -13,14 +13,20 @@ FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
     ft_putendl_fd.c ft_putnbr_fd.c ft_strnew.c \
 	ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_lstpush.c
 
+OBJ = $(FILES:%.c=%.o)
+
 all: $(NAME)
 
-$(NAME):
+$(NAME): 
+	#$(OBJ)
 	@echo "Building..."
 	@gcc $(FLAGS) $(FILES)
-	@ar rc $(NAME) *.o
+	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo "Build completed"
+
+# %.o: %.c
+# 	gcc $(FLAGS) -c $^ -o $@
 
 copy:
 	@cp -f libc/*.c .
