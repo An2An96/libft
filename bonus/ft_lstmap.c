@@ -12,16 +12,29 @@
 
 #include "libft.h"
 
+static void	ft_free_content(void *content, size_t content_size)
+{
+	ft_memdel(&content);
+	content_size = 0;
+}	
+
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *new_lst;
+	t_list *tmp;
 
 	new_lst = NULL;
-	if (lst)
+	if (lst && f)
 	{
 		while (lst)
 		{
-			ft_lstpush(&new_lst, f(lst));
+			tmp = f(lst);
+			if (tmp == NULL)
+			{
+				ft_lstdel(&new_lst, ft_free_content);
+				break;
+			}
+			ft_lstpush(&new_lst, tmp);
 			lst = lst->next;
 		}
 	}
