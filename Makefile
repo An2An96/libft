@@ -17,7 +17,7 @@ OBJ = $(FILES:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): 
+$(NAME):
 	#$(OBJ)
 	@echo "Building..."
 	@gcc $(FLAGS) $(FILES)
@@ -39,7 +39,8 @@ test: re
 	gcc -g -I. tests/main.c -L. -lft -o test_libft
 
 clean:
-	@rm -f *.o
+	@rm -f $(OBJ)
+	#@rm -f $(FILES)
 	@echo "Object files removed"
 
 fclean: clean
