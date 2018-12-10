@@ -19,16 +19,20 @@ int	ft_lstremove(t_list **alst, t_list *el, void (*del)(void *, size_t))
 		if (*alst == el)
 		{
 			*alst = (*alst)->next;
-			ft_lstdelone(el, del);
+			ft_lstdelone(&el, del);
+			return (1);
 		}
 		else if ((*alst)->next == el)
 		{
 			(*alst)->next = el->next;
-			ft_lstdelone(el, del);
+			ft_lstdelone(&el, del);
+			return (1);
 		}
 		else
 		{
 			ft_lstremove(&((*alst)->next), el, del);
+			return (1);
 		}
 	}
+	return (0);
 }
