@@ -16,9 +16,9 @@ static void	ft_free_content(void *content, size_t content_size)
 {
 	ft_memdel(&content);
 	content_size = 0;
-}	
+}
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *new_lst;
 	t_list *tmp;
@@ -32,7 +32,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 			if (tmp == NULL)
 			{
 				ft_lstdel(&new_lst, ft_free_content);
-				break;
+				break ;
 			}
 			ft_lstpush(&new_lst, tmp);
 			lst = lst->next;
