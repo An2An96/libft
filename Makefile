@@ -1,7 +1,7 @@
 ############################		Variables		############################
 NAME = libft.a
 
-FLAGS = -g -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 
 INC_DIR = ./includes
 SRCS_DIR = ./srcs
