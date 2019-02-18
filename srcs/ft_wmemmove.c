@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_wmemmove.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/06 13:11:14 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/06 13:11:14 by rschuppe         ###   ########.fr       */
+/*   Created: 2019/01/15 19:11:55 by rschuppe          #+#    #+#             */
+/*   Updated: 2019/01/15 19:12:13 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	*ft_wmemmove(wchar_t *dst, const wchar_t *src, size_t len)
 {
-	unsigned int us_n;
-
-	if (n < 0)
-	{
-		ft_putchar('-');
-		us_n = -n;
-	}
-	else
-		us_n = n;
-	if (us_n / 10)
-		ft_putnbr((int)(us_n / 10));
-	ft_putchar((us_n % 10) + '0');
+	if (!dst && !src)
+		return (NULL);
+	while (len-- > 0)
+		dst[len] = src[len];
+	return (dst);
 }

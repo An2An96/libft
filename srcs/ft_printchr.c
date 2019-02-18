@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/06 13:01:27 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/06 13:01:27 by rschuppe         ###   ########.fr       */
+/*   Created: 2018/12/24 20:45:59 by anorjen           #+#    #+#             */
+/*   Updated: 2018/12/27 22:19:08 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_printchr(int counts, char c)
 {
-	ft_putstr_fd(s, 1);
+	while (counts)
+	{
+		ft_putchar(c);
+		counts--;
+	}
 }

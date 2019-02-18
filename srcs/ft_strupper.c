@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strupper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 18:02:34 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/05 18:02:34 by rschuppe         ###   ########.fr       */
+/*   Created: 2018/12/26 19:31:29 by anorjen           #+#    #+#             */
+/*   Updated: 2019/01/16 17:36:29 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strupper(char *str)
 {
-	return (char*)ft_memalloc((size + 1) * sizeof(char));
+	int	i;
+
+	i = -1;
+	while (str[++i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+	}
+	return (str);
 }

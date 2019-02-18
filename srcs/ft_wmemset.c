@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_wmemset.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 18:40:13 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/05 18:40:13 by rschuppe         ###   ########.fr       */
+/*   Created: 2019/01/15 19:11:02 by rschuppe          #+#    #+#             */
+/*   Updated: 2019/01/15 19:11:17 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	*ft_wmemset(wchar_t *str, int c, size_t n)
 {
-	char	*res;
-	size_t	s1_len;
-
-	res = NULL;
-	s1_len = ft_strlen(s1);
-	res = ft_strnew(s1_len + ft_strlen(s2));
-	if (res)
+	while (n > 0)
 	{
-		ft_strcpy(res, s1);
-		ft_strcpy(res + s1_len, s2);
+		str[n - 1] = c;
+		n--;
 	}
-	return (res);
+	return (str);
 }

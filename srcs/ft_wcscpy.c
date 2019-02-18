@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_wcscpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 19:13:34 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/03 19:13:34 by rschuppe         ###   ########.fr       */
+/*   Created: 2019/01/15 19:18:08 by rschuppe          #+#    #+#             */
+/*   Updated: 2019/01/15 19:18:17 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+wchar_t	*ft_wcscpy(wchar_t *dest, const wchar_t *src)
 {
 	unsigned int i;
 

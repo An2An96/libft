@@ -1,51 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/06 11:47:09 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/06 11:47:09 by rschuppe         ###   ########.fr       */
+/*   Created: 2018/12/23 16:19:52 by rschuppe          #+#    #+#             */
+/*   Updated: 2018/12/25 17:27:35 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_zero_itoa(void)
+char		*ft_itoa_base(long long n, int base)
 {
-	char	*res;
+	long long	unsig_n;
+	int			discharges;
+	char		*res;
+	char		sign;
 
-	res = ft_strnew(1);
-	if (res)
-		res[0] = '0';
-	return (res);
-}
-
-char		*ft_itoa(int n)
-{
-	unsigned int	unsig_n;
-	int				discharges;
-	char			*res;
-
-	if (n == 0)
-		return (ft_zero_itoa());
-	discharges = (n < 0);
+	sign = (n < 0);
+	discharges = sign + 1;
 	unsig_n = ABS(n);
-	while (n)
-	{
-		n /= 10;
+	while ((n /= base))
 		discharges++;
-	}
 	res = ft_strnew(discharges);
 	if (res)
 	{
-		while (unsig_n)
+		while (discharges > sign)
 		{
-			res[--discharges] = (unsig_n % 10) + '0';
-			unsig_n /= 10;
+			n = unsig_n % base;
+			res[--discharges] = n + ((n < 10) ? '0' : 'A' - 10);
+			unsig_n /= base;
 		}
-		if (discharges)
+		if (sign)
 			res[--discharges] = '-';
 	}
 	return (res);

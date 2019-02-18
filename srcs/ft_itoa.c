@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/06 13:15:22 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/06 13:15:22 by rschuppe         ###   ########.fr       */
+/*   Created: 2018/12/06 11:47:09 by rschuppe          #+#    #+#             */
+/*   Updated: 2018/12/23 16:28:16 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+char		*ft_itoa(int n)
 {
-	if (s)
-		while (*s)
-			write(fd, s++, 1);
+	return (ft_itoa_base(n, 10));
 }
