@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/01/21 13:38:26 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/02/21 14:33:42 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define BUFF_SIZE	9999
+# define BUFF_SIZE	512
 # define MAX_FD		8192
 
+# define MIN(a,b)	((a < b) ? (a) : (b))
+# define MAX(a,b)	((a > b) ? (a) : (b))
 # define ABS(n)		((n < 0) ? -(n) : (n))
 
 typedef struct		s_list
