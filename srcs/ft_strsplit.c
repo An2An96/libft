@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 19:05:02 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/05 19:05:02 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/02/25 19:33:07 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,9 @@ static int	ft_allocate_words_memory(char const *s, char c, char **words)
 
 static void	ft_split_words(char const *s, char c, char **words)
 {
-	unsigned int	i;
 	unsigned int	char_idx;
 	unsigned int	word_idx;
 
-	i = 0;
 	word_idx = 0;
 	char_idx = 0;
 	while (*s)

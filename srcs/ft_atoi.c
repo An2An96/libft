@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 13:51:56 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/05 13:51:57 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/02/25 19:33:22 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int			ft_atoi(const char *str)
 	char		negative;
 	long long	result;
 	int			i;
-	char		discharge;
 
 	i = 0;
 	while (ft_is_invisible_char(str[i]))
@@ -36,7 +35,6 @@ int			ft_atoi(const char *str)
 	else
 		negative = 1;
 	result = 0;
-	discharge = 0;
 	while (ft_isdigit(str[i]))
 	{
 		result = (result * 10) + (str[i] - '0');

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 15:33:14 by rschuppe          #+#    #+#             */
-/*   Updated: 2018/12/06 15:33:15 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/02/25 19:36:02 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	ft_free_content(void *content, size_t content_size)
 {
 	ft_memdel(&content);
 	content_size = 0;
+	(void)content_size;
 }
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
