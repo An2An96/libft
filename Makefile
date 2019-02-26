@@ -33,7 +33,7 @@ FUNCS =	ft_memalloc ft_memdel ft_memdel ft_memcpy ft_memmove ft_memset \
 		ft_lstremove ft_lstlen ft_lstiter ft_lstmap \
 \
 		ft_dlst_create ft_create_node ft_create_node_ptr \
-		ft_dlst_push_front ft_dlst_push_back \
+		ft_dlst_push_front ft_dlst_push_back ft_dlst_merge ft_dlst_del \
 \
 		get_next_line \
 		ft_pow \

@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/02/26 15:19:00 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/02/26 18:15:00 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,8 @@ t_node				*ft_create_node(void *content, size_t content_size);
 t_node				*ft_create_node_ptr(void *content);
 void				ft_dlst_push_front(t_dlist *list, t_node *node);
 void				ft_dlst_push_back(t_dlist *list, t_node *node);
+void				ft_dlst_merge(t_dlist *dst, t_dlist **src);
+void				ft_dlst_del(t_dlist **list, void (*del)(void *, size_t));
 
 /*
 **					Files
