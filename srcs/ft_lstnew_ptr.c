@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/06 14:21:40 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/02/26 15:04:57 by rschuppe         ###   ########.fr       */
+/*   Created: 2019/02/26 15:00:45 by rschuppe          #+#    #+#             */
+/*   Updated: 2019/02/26 15:04:17 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+/*
+**	Создание элемента списка без копирования (=> без выделения памяти)
+*/
+
+t_list	*ft_lstnew_ptr(void const *content, size_t content_size)
 {
 	t_list	*res;
 
@@ -20,11 +24,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		if (content)
 		{
-			if ((res->content = ft_memalloc(content_size)))
-			{
-				ft_memcpy(res->content, content, content_size);
-				res->content_size = content_size;
-			}
+			res->content = content;
+			res->content_size = sizeof(void *);
 		}
 	}
 	return (res);
