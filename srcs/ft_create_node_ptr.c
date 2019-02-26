@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlst_push_front.c                               :+:      :+:    :+:   */
+/*   ft_create_node_ptr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/25 19:31:06 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/02/26 15:17:05 by rschuppe         ###   ########.fr       */
+/*   Created: 2019/02/26 15:15:03 by rschuppe          #+#    #+#             */
+/*   Updated: 2019/02/26 15:18:16 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_dlst_push_front(t_dlist *list, t_node *node)
+t_node	*ft_create_node_ptr(void *content)
 {
-	if (list && node)
+	t_node	*res;
+
+	if ((res = ft_memalloc(sizeof(t_node))))
 	{
-		if (list->head)
+		if (content)
 		{
-			list->head->prev = node;
-			node->next = list->head;
+			res->content = content;
+			res->content_size = sizeof(void *);
 		}
-		else
-			list->tail = node;
-		list->head = node;
-		list->size++;
 	}
+	return (res);
 }
