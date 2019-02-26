@@ -29,8 +29,8 @@ FUNCS =	ft_memalloc ft_memdel ft_memdel ft_memcpy ft_memmove ft_memset \
 		ft_putchar ft_putstr ft_putendl ft_putnbr \
 		ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 \
-		ft_lstnew ft_lstadd ft_lstdelone ft_lstdel ft_lstiter ft_lstmap \
-		ft_lstpush ft_lstremove ft_lstlen \
+		ft_lstnew ft_lstnew_ptr ft_lstadd ft_lstdelone ft_lstdel ft_lstpush \
+		ft_lstremove ft_lstlen ft_lstiter ft_lstmap \
 \
 		ft_dlst_create ft_create_node ft_dlst_push_front ft_dlst_push_back \
 \
