@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/02/25 19:26:13 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/02/26 15:08:42 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ void				ft_putnbr_fd(long long n, int fd);
 */
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
+t_list				*ft_lstnew_ptr(void const *content);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);

@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 15:00:45 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/02/26 15:04:17 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/02/26 15:08:28 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **	Создание элемента списка без копирования (=> без выделения памяти)
 */
 
-t_list	*ft_lstnew_ptr(void const *content, size_t content_size)
+t_list	*ft_lstnew_ptr(void const *content)
 {
 	t_list	*res;
 
@@ -24,7 +24,7 @@ t_list	*ft_lstnew_ptr(void const *content, size_t content_size)
 	{
 		if (content)
 		{
-			res->content = content;
+			res->content = (void*)content;
 			res->content_size = sizeof(void *);
 		}
 	}
