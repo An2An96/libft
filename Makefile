@@ -12,42 +12,64 @@ INC_DIR = ./includes
 SRCS_DIR = ./srcs
 OBJS_DIR = ./obj
 
-FUNCS =	ft_memalloc ft_memdel ft_memdel ft_memcpy ft_memmove ft_memset \
-		ft_memccpy ft_memchr ft_memcmp ft_bzero \
-\
-		ft_isdigit ft_isprint ft_isalpha ft_isascii ft_isalnum \
-		ft_tolower ft_toupper \
-\
-		ft_strlen ft_strdup ft_strnew ft_strdel ft_strclr \
-		ft_strcpy ft_strncpy ft_strcat ft_strncat ft_strlcat \
-		ft_strequ ft_strnequ ft_strcmp ft_strncmp ft_strchr ft_strrchr \
-		ft_strstr ft_strnstr ft_strsub ft_strjoin ft_strtrim ft_strsplit \
-		ft_striter ft_striteri ft_strmap ft_strmapi ft_strlower ft_strupper \
-\
-		ft_atoi ft_itoa ft_itoa_base ft_uitoa_base ft_dtoa ft_stoa \
-\
-		ft_putchar ft_putstr ft_putendl ft_putnbr \
-		ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
-\
-		ft_dlst_create ft_create_node ft_create_node_ptr \
-		ft_dlst_push_front ft_dlst_push_back ft_dlst_merge ft_dlst_del \
-\
-		get_next_line \
-		ft_pow \
-		ft_swap ft_swap_ptr ft_printchr ft_str_fixlen
+FUNCS =			get_next_line \
+				ft_pow			ft_swap			ft_swap_ptr		ft_printchr \
+				ft_str_fixlen
 
-LST_DIR = lists/
-LST_FUNCS = ft_lstnew		ft_lstnew_ptr	ft_lstadd		ft_lstdelone \
-			ft_lstdel		ft_lstpush		ft_lstremove	ft_lstlen \
-			ft_lstiter		ft_lstmap
+MEM_DIR = memory/
+MEM_FUNCS = 	ft_memalloc		ft_memdel		ft_memdel		ft_memcpy \
+				ft_memmove		ft_memset		ft_memccpy		ft_memchr \
+				ft_memcmp		ft_bzero
 
-PQ_DIR =	pqueue/
-PQ_FUNCS =	pq_inline_funcs pq_init			pq_insert		pq_extractmax \
-			pq_ascent		pq_drowning		pq_swap_node
+CHR_DIR = char/
+CHR_FUNCS = 	ft_isdigit		ft_isprint		ft_isalpha		ft_isascii \
+				ft_isalnum		ft_tolower		ft_toupper
+
+STR_DIR = string/
+STR_FUNCS = 	ft_strlen		ft_strdup		ft_strnew		ft_strdel \
+				ft_strclr		ft_strcpy		ft_strncpy		ft_strcat \
+				ft_strncat		ft_strlcat		ft_strequ		ft_strnequ \
+				ft_strcmp		ft_strncmp		ft_strchr		ft_strrchr \
+				ft_strstr		ft_strnstr		ft_strsub		ft_strjoin \
+				ft_strtrim		ft_strsplit		ft_striter		ft_striteri \
+				ft_strmap		ft_strmapi		ft_strlower		ft_strupper
+
+WCS_DIR = unicode_string/
+WCS_FUNCS =		ft_wcscpy		ft_wcsdup		ft_wcsjoin		ft_wcslen \
+				ft_wcsnew
+
+OUT_DIR = output/
+OUT_FUNCS = 	ft_putchar		ft_putstr		ft_putendl		ft_putnbr \
+				ft_putchar_fd	ft_putstr_fd	ft_putendl_fd	ft_putnbr_fd
+
+CNVRT_DIR = convert/
+CNVERT_FUNCS =	ft_atoi			ft_itoa			ft_itoa_base	ft_uitoa_base \
+				ft_dtoa			ft_stoa
+
+LST_DIR = list/
+LST_FUNCS =		ft_lstnew		ft_lstnew_ptr	ft_lstadd		ft_lstdelone \
+				ft_lstdel		ft_lstpush		ft_lstremove	ft_lstlen \
+				ft_lstiter		ft_lstmap
+
+DLST_DIR = dual_link_list/
+DLST_FUNCS =	ft_dlst_create		ft_create_node		ft_create_node_ptr \
+				ft_dlst_push_front	ft_dlst_push_back	ft_dlst_merge \
+				ft_dlst_del
+
+BH_DIR = bin_heap/
+BH_FUNCS =		pq_inline_funcs pq_init			pq_insert		pq_extractmax \
+				pq_ascent		pq_drowning		pq_swap_node
 
 FILES += $(FUNCS)
+FILES += $(addprefix $(MEM_DIR), $(MEM_FUNCS))
+FILES += $(addprefix $(CHR_DIR), $(CHR_FUNCS))
+FILES += $(addprefix $(STR_DIR), $(STR_FUNCS))
+FILES += $(addprefix $(WCS_DIR), $(WCS_FUNCS))
+FILES += $(addprefix $(OUT_DIR), $(OUT_FUNCS))
+FILES += $(addprefix $(CNVRT_DIR), $(CNVERT_FUNCS))
 FILES += $(addprefix $(LST_DIR), $(LST_FUNCS))
-FILES += $(addprefix $(PQ_DIR), $(PQ_FUNCS))
+FILES += $(addprefix $(DLST_DIR), $(DLST_FUNCS))
+FILES += $(addprefix $(BH_DIR), $(BH_FUNCS))
 
 SRCS = $(foreach func,$(FILES),$(SRCS_DIR)/$(func).c)
 OBJ = $(foreach func,$(FILES),$(OBJS_DIR)/$(func).o)
@@ -60,8 +82,15 @@ all: $(NAME)
 
 $(OBJS_DIR):
 	@mkdir -p $@
+	@mkdir -p $@/$(MEM_DIR)
+	@mkdir -p $@/$(CHR_DIR)
+	@mkdir -p $@/$(STR_DIR)
+	@mkdir -p $@/$(WCS_DIR)
+	@mkdir -p $@/$(OUT_DIR)
+	@mkdir -p $@/$(CNVRT_DIR)
 	@mkdir -p $@/$(LST_DIR)
-	@mkdir -p $@/$(PQ_DIR)
+	@mkdir -p $@/$(DLST_DIR)
+	@mkdir -p $@/$(BH_DIR)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
 	@gcc $(FLAGS) -I $(INC_DIR) -c $< -o $@

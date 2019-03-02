@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_node_ptr.c                               :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/26 15:15:03 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/02/26 15:18:16 by rschuppe         ###   ########.fr       */
+/*   Created: 2018/12/06 11:47:09 by rschuppe          #+#    #+#             */
+/*   Updated: 2019/03/02 17:08:01 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_node	*ft_create_node_ptr(void *content)
+inline char	*ft_itoa(int n)
 {
-	t_node	*res;
-
-	if ((res = ft_memalloc(sizeof(t_node))))
-	{
-		if (content)
-		{
-			res->content = content;
-			res->content_size = sizeof(void *);
-		}
-	}
-	return (res);
+	return (ft_itoa_base(n, 10));
 }
