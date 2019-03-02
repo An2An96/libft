@@ -56,6 +56,10 @@ DLST_FUNCS =	ft_dlst_create		ft_create_node		ft_create_node_ptr \
 				ft_dlst_push_front	ft_dlst_push_back	ft_dlst_merge \
 				ft_dlst_del
 
+STK_DIR = stack/
+STK_FUNCS =		ft_stack_new	ft_stack_push	ft_stack_pop	ft_stack_extend	\
+				ft_stack_delete
+
 BH_DIR = bin_heap/
 BH_FUNCS =		pq_inline_funcs pq_init			pq_insert		pq_extractmax \
 				pq_ascent		pq_drowning		pq_swap_node
@@ -69,6 +73,7 @@ FILES += $(addprefix $(OUT_DIR), $(OUT_FUNCS))
 FILES += $(addprefix $(CNVRT_DIR), $(CNVERT_FUNCS))
 FILES += $(addprefix $(LST_DIR), $(LST_FUNCS))
 FILES += $(addprefix $(DLST_DIR), $(DLST_FUNCS))
+FILES += $(addprefix $(STK_DIR), $(STK_FUNCS))
 FILES += $(addprefix $(BH_DIR), $(BH_FUNCS))
 
 SRCS = $(foreach func,$(FILES),$(SRCS_DIR)/$(func).c)
@@ -90,6 +95,7 @@ $(OBJS_DIR):
 	@mkdir -p $@/$(CNVRT_DIR)
 	@mkdir -p $@/$(LST_DIR)
 	@mkdir -p $@/$(DLST_DIR)
+	@mkdir -p $@/$(STK_DIR)
 	@mkdir -p $@/$(BH_DIR)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
