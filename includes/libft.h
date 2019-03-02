@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/02 17:26:08 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/02 18:24:42 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ int					ft_lstremove(
 int					ft_lstlen(t_list *lst);
 
 /*
-**					Double linked list
+**					Dual linked list
 */
 
 t_dlist				*ft_dlst_create();
@@ -190,6 +190,8 @@ t_node				*ft_create_node(void *content, size_t content_size);
 t_node				*ft_create_node_ptr(void *content);
 void				ft_dlst_push_front(t_dlist *list, t_node *node);
 void				ft_dlst_push_back(t_dlist *list, t_node *node);
+void				ft_dlst_remove_node(
+	t_dlist *list, t_node *node, void (*del)(void *, size_t));
 void				ft_dlst_merge(t_dlist *dst, t_dlist **src);
 void				ft_dlst_del(t_dlist **list, void (*del)(void *, size_t));
 
