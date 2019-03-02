@@ -6,13 +6,13 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/02 17:25:25 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/02 17:25:37 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/02 18:07:11 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		stack_pop(t_stack *stack, int *value)
+int		ft_stack_pop(t_stack *stack, int *value)
 {
 	int i;
 
