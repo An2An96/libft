@@ -61,7 +61,7 @@ STK_FUNCS =		ft_stack_new	ft_stack_push	ft_stack_pop	ft_stack_extend	\
 				ft_stack_delete
 
 BH_DIR = bin_heap/
-BH_FUNCS =		pq_inline_funcs pq_init			pq_insert		pq_extractmax \
+BH_FUNCS =		inline_funcs 	pq_init			pq_insert		pq_extract \
 				pq_ascent		pq_drowning		pq_swap_node
 
 FILES += $(FUNCS)

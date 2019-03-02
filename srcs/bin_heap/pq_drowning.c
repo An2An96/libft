@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pq_drowning.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wballaba <wballaba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/01 19:50:07 by wballaba          #+#    #+#             */
-/*   Updated: 2019/03/02 15:26:42 by wballaba         ###   ########.fr       */
+/*   Updated: 2019/03/02 20:07:12 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	pq_drowning(t_pqueue *pqueue, size_t pos)
 		if (left_pos >= pqueue->length)
 			break ;
 		if ((right_pos) == pqueue->length ||
-			pq_priority(pqueue, right_pos) <= pq_priority(pqueue, left_pos))
+			pq_compare_priority(pqueue, right_pos, left_pos))
 		{
 			if (!pq_compare_priority(pqueue, pos, left_pos))
 				break ;
