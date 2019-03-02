@@ -6,13 +6,13 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/02 18:23:35 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/02 18:43:40 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/02 18:45:51 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_node	*is_node_belong_dlst(t_dlist *list, t_node *node)
+static int	is_node_belong_dlst(t_dlist *list, t_node *node)
 {
 	t_node *cur;
 
