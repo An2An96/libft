@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/02 16:05:56 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/02 17:26:08 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,13 @@ typedef struct		s_pqueue
 	size_t			length;
 	size_t			size;
 }					t_pqueue;
+
+typedef struct		s_stack
+{
+	int				*head;
+	int				len;
+	int				size;
+}					t_stack;
 
 /*
 **					Memory
@@ -185,6 +192,17 @@ void				ft_dlst_push_front(t_dlist *list, t_node *node);
 void				ft_dlst_push_back(t_dlist *list, t_node *node);
 void				ft_dlst_merge(t_dlist *dst, t_dlist **src);
 void				ft_dlst_del(t_dlist **list, void (*del)(void *, size_t));
+
+/*
+**					Stack
+*/
+
+t_stack				*ft_stack_new(int size);
+void				ft_stack_extend(t_stack *stack, int add_size);
+void				ft_stack_push(t_stack *stack, int value);
+int					ft_stack_pop(t_stack *stack, int *value);
+t_stack				*ft_stack_copy(t_stack *src);
+void				ft_stack_delete(t_stack *stack);
 
 /*
 **					Binary heap
