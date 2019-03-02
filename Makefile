@@ -29,36 +29,48 @@ FUNCS =	ft_memalloc ft_memdel ft_memdel ft_memcpy ft_memmove ft_memset \
 		ft_putchar ft_putstr ft_putendl ft_putnbr \
 		ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 \
-		ft_lstnew ft_lstnew_ptr ft_lstadd ft_lstdelone ft_lstdel ft_lstpush \
-		ft_lstremove ft_lstlen ft_lstiter ft_lstmap \
-\
 		ft_dlst_create ft_create_node ft_create_node_ptr \
 		ft_dlst_push_front ft_dlst_push_back ft_dlst_merge ft_dlst_del \
 \
 		get_next_line \
 		ft_pow \
-		ft_printchr ft_str_fixlen
+		ft_swap ft_swap_ptr ft_printchr ft_str_fixlen
 
-SRCS = $(foreach func,$(FUNCS),$(SRCS_DIR)/$(func).c)
-OBJ = $(foreach func,$(FUNCS),$(OBJS_DIR)/$(func).o)
+LST_DIR = lists/
+LST_FUNCS = ft_lstnew		ft_lstnew_ptr	ft_lstadd		ft_lstdelone \
+			ft_lstdel		ft_lstpush		ft_lstremove	ft_lstlen \
+			ft_lstiter		ft_lstmap
+
+PQ_DIR =	pqueue/
+PQ_FUNCS =	pq_inline_funcs pq_init			pq_insert		pq_extractmax \
+			pq_ascent		pq_drowning		pq_swap_node
+
+FILES += $(FUNCS)
+FILES += $(addprefix $(LST_DIR), $(LST_FUNCS))
+FILES += $(addprefix $(PQ_DIR), $(PQ_FUNCS))
+
+SRCS = $(foreach func,$(FILES),$(SRCS_DIR)/$(func).c)
+OBJ = $(foreach func,$(FILES),$(OBJS_DIR)/$(func).o)
 
 ############################		  Rules 		############################
 
 all: $(NAME)
+
+# $(OBJ): | $(OBJS_DIR)
+
+$(OBJS_DIR):
+	@mkdir -p $@
+	@mkdir -p $@/$(LST_DIR)
+	@mkdir -p $@/$(PQ_DIR)
+
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
+	@gcc $(FLAGS) -I $(INC_DIR) -c $< -o $@
 
 $(NAME): $(OBJ)
 	@echo "$(YELLOW_COLOR)Building $@$(NO_COLOR)"
 	@ar rc $@ $^
 	@ranlib $@
 	@echo "$(OK_COLOR)Build complete$(NO_COLOR)"
-
-$(OBJ): | $(OBJS_DIR)
-
-$(OBJS_DIR):
-	@mkdir -p $@
-
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-	@gcc $(FLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS_DIR)

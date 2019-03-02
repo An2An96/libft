@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/02/26 18:15:00 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/02 16:05:56 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_pqueue_node
+{
+	int				priority;
+	void			*content;
+}					t_pqueue_node;
+
+typedef struct		s_pqueue
+{
+	t_pqueue_node	*nodes;
+	size_t			length;
+	size_t			size;
+}					t_pqueue;
 
 /*
 **					Memory
@@ -174,6 +187,19 @@ void				ft_dlst_merge(t_dlist *dst, t_dlist **src);
 void				ft_dlst_del(t_dlist **list, void (*del)(void *, size_t));
 
 /*
+**					Binary heap
+*/
+
+t_pqueue			*pq_init(size_t length);
+int					pq_insert(t_pqueue	*pqueue, void *content, int priority);
+void				*pq_extractmax(t_pqueue	*pqueue);
+void				pq_ascent(t_pqueue	*pqueue, size_t pos);
+void				pq_drowning(t_pqueue *pqueue, size_t pos);
+int					pq_swap_node(t_pqueue *pqueue, size_t a, size_t b);
+int					pq_compare_priority(t_pqueue *pqueue, size_t a, size_t b);
+int					pq_priority(t_pqueue *pqueue, size_t pos);
+
+/*
 **					Files
 */
 
@@ -186,5 +212,7 @@ int					get_next_line(const int fd, char **line);
 long double			ft_pow(long double num, int power);
 void				ft_printchr(int counts, char c);
 int					ft_str_fixlen(char **str, char ch, int width, int side);
+void				ft_swap(int *a, int *b);
+void				ft_swap_ptr(void **a, void **b);
 
 #endif
