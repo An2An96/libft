@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/02 18:23:35 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/02 18:45:51 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/02 21:35:12 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	is_node_belong_dlst(t_dlist *list, t_node *node)
 **		Не оттестировано
 */
 
-void			ft_dlst_remove_node(
+void		ft_dlst_remove_node(
 	t_dlist *list, t_node *node, void (*del)(void *, size_t))
 {
 	int checked;

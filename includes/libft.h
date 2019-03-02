@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/02 20:18:55 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/02 21:34:51 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 # include <fcntl.h>
 # include <stdbool.h>
 
-# define BUFF_SIZE	512
-# define MAX_FD		8192
+# define BUFF_SIZE		512
+# define MAX_FD			4096
 
-# define MIN(a,b)	((a < b) ? (a) : (b))
-# define MAX(a,b)	((a > b) ? (a) : (b))
-# define ABS(n)		((n < 0) ? -(n) : (n))
+# define MIN(a,b)		((a < b) ? (a) : (b))
+# define MAX(a,b)		((a > b) ? (a) : (b))
+# define ABS(n)			((n < 0) ? -(n) : (n))
 
 # define SET_MAX(v)		v = ~(0 | 1 << (sizeof(v) * 8 - 1))
 # define SET_UMAX(v)	v = ~0
@@ -36,7 +36,7 @@ typedef enum
 }	t_pq_type;
 
 /*
-**						STRCUCTURES
+**								STRCUCTURES
 */
 
 typedef struct		s_node
@@ -83,7 +83,7 @@ typedef struct		s_stack
 }					t_stack;
 
 /*
-***********************		FUNCTION DECLARATIONS		************************
+**						FUNCTION DECLARATIONS
 */
 
 /*
