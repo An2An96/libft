@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/04 15:38:40 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/04 15:51:13 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,6 +199,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_lstremove(
 	t_list **alst, t_list *el, void (*del)(void *, size_t));
 int					ft_lstlen(t_list *lst);
+t_list				*ft_lstget(t_list *lst, size_t lst_num);
 
 /*
 **					Dual linked list

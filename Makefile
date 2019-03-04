@@ -49,7 +49,7 @@ CNVERT_FUNCS =	ft_atoi			ft_itoa			ft_itoa_base	ft_uitoa_base \
 LST_DIR = list/
 LST_FUNCS =		ft_lstnew		ft_lstnew_ptr	ft_lstadd		ft_lstdelone \
 				ft_lstdel		ft_lstpush		ft_lstremove	ft_lstlen \
-				ft_lstiter		ft_lstmap
+				ft_lstiter		ft_lstmap		ft_lstget
 
 DLST_DIR = dual_link_list/
 DLST_FUNCS =	ft_dlst_create		ft_create_node		ft_create_node_ptr \
