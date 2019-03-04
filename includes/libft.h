@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/02 21:34:51 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/04 13:07:20 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 # include <fcntl.h>
 # include <stdbool.h>
 
-# define BUFF_SIZE		512
-# define MAX_FD			4096
+# define BUFF_SIZE			512
+# define MAX_FD				4096
 
-# define MIN(a,b)		((a < b) ? (a) : (b))
-# define MAX(a,b)		((a > b) ? (a) : (b))
-# define ABS(n)			((n < 0) ? -(n) : (n))
+# define MIN(a,b)			((a < b) ? (a) : (b))
+# define MAX(a,b)			((a > b) ? (a) : (b))
+# define ABS(n)				((n < 0) ? -(n) : (n))
 
-# define SET_MAX(v)		v = ~(0 | 1 << (sizeof(v) * 8 - 1))
-# define SET_UMAX(v)	v = ~0
+# define SET_MAX(v)			v = ~(0 | 1 << (sizeof(v) * 8 - 1))
+# define SET_UMAX(v)		v = ~0
 
 typedef enum
 {
@@ -232,6 +232,7 @@ void				ft_stack_delete(t_stack *stack);
 t_pqueue			*pq_init(size_t length, t_pq_type is_min_heap);
 int					pq_insert(t_pqueue *pqueue, void *content, int priority);
 void				*pq_extract(t_pqueue *pqueue);
+void				*pq_extract_ex(t_pqueue *pqueue, int *priority);
 void				pq_ascent(t_pqueue *pqueue, size_t pos);
 void				pq_drowning(t_pqueue *pqueue, size_t pos);
 int					pq_swap_node(t_pqueue *pqueue, size_t a, size_t b);
