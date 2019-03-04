@@ -54,7 +54,7 @@ LST_FUNCS =		ft_lstnew		ft_lstnew_ptr	ft_lstadd		ft_lstdelone \
 DLST_DIR = dual_link_list/
 DLST_FUNCS =	ft_dlst_create		ft_create_node		ft_create_node_ptr \
 				ft_dlst_push_front	ft_dlst_push_back	ft_dlst_merge \
-				ft_dlst_remove_node	ft_dlst_del
+				ft_dlst_remove_node	ft_dlst_del			ft_dlst_get
 
 STK_DIR = stack/
 STK_FUNCS =		ft_stack_new	ft_stack_push	ft_stack_pop	ft_stack_extend	\

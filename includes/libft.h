@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/04 13:07:20 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/04 15:38:40 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,6 +213,7 @@ void				ft_dlst_remove_node(
 	t_dlist *list, t_node *node, void (*del)(void *, size_t));
 void				ft_dlst_merge(t_dlist *dst, t_dlist **src);
 void				ft_dlst_del(t_dlist **list, void (*del)(void *, size_t));
+void				*ft_dlst_get(t_dlist *list, size_t el_num);
 
 /*
 **					Stack
