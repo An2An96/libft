@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/04 15:51:13 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/06 17:52:45 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct		s_pqueue_node
 {
 	int				priority;
 	void			*content;
+	size_t			content_size;
 }					t_pqueue_node;
 
 typedef struct		s_pqueue
@@ -233,6 +234,7 @@ void				ft_stack_delete(t_stack *stack);
 
 t_pqueue			*pq_init(size_t length, t_pq_type is_min_heap);
 int					pq_insert(t_pqueue *pqueue, void *content, int priority);
+void				pq_delete(t_pqueue **pqueue, void (*del)(void *, size_t));
 void				*pq_extract(t_pqueue *pqueue);
 void				*pq_extract_ex(t_pqueue *pqueue, int *priority);
 void				pq_ascent(t_pqueue *pqueue, size_t pos);

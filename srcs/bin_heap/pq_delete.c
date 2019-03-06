@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pq_insert.c                                        :+:      :+:    :+:   */
+/*   pq_delete.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 15:41:31 by wballaba          #+#    #+#             */
-/*   Updated: 2019/03/06 17:55:16 by rschuppe         ###   ########.fr       */
+/*   Created: 2019/03/06 17:42:56 by rschuppe          #+#    #+#             */
+/*   Updated: 2019/03/06 17:54:41 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** функция добавляет новый элемент в бинарную кучу
-*/
-
-int	pq_insert(t_pqueue *pqueue, void *content, int priority)
+void	pq_delete(t_pqueue **pqueue, void (*del)(void *, size_t))
 {
-	size_t	pos;
+	size_t i;
 
-	if (pqueue->length == pqueue->size)
-		return (0);
-	pos = pqueue->length;
-	pqueue->nodes[pos].content = content;
-	pqueue->nodes[pos].content_size = 0;
-	pqueue->nodes[pos].priority = priority;
-	pqueue->length++;
-	pq_ascent(pqueue, pos);
-	return (1);
+	if (pqueue && *pqueue)
+	{
+		if (del)
+		{
+			i = -1;
+			while (++i < (*pqueue)->length)
+				del((*pqueue)->nodes[i].content,
+					(*pqueue)->nodes[i].content_size);
+		}
+		free((*pqueue)->nodes);
+		free(*pqueue);
+		*pqueue = NULL;
+	}
 }
