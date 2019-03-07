@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/02 18:23:35 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/02 21:35:12 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/07 17:14:18 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		ft_dlst_remove_node(
 {
 	int checked;
 
-	if (list)
+	if (!list)
 		return ;
 	checked = 0;
 	if (node == list->head)
