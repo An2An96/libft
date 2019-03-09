@@ -40,7 +40,8 @@ WCS_FUNCS =		ft_wcscpy		ft_wcsdup		ft_wcsjoin		ft_wcslen \
 
 OUT_DIR = output/
 OUT_FUNCS = 	ft_putchar		ft_putstr		ft_putendl		ft_putnbr \
-				ft_putchar_fd	ft_putstr_fd	ft_putendl_fd	ft_putnbr_fd
+				ft_putchar_fd	ft_putstr_fd	ft_putendl_fd	ft_putnbr_fd \
+				ft_putwchar		ft_putwstr
 
 CNVRT_DIR = convert/
 CNVERT_FUNCS =	ft_atoi			ft_itoa			ft_itoa_base	ft_uitoa_base \
