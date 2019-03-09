@@ -19,7 +19,7 @@ FUNCS =			get_next_line \
 MEM_DIR = memory/
 MEM_FUNCS = 	ft_memalloc		ft_memdel		ft_memdel		ft_memcpy \
 				ft_memmove		ft_memset		ft_memccpy		ft_memchr \
-				ft_memcmp		ft_bzero
+				ft_memcmp		ft_bzero		ft_wmemmove		ft_wmemset
 
 CHR_DIR = char/
 CHR_FUNCS = 	ft_isdigit		ft_isprint		ft_isalpha		ft_isascii \
