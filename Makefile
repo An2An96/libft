@@ -14,7 +14,7 @@ OBJS_DIR = ./obj
 
 FUNCS =			get_next_line \
 				ft_pow			ft_swap			ft_swap_ptr		ft_printchr \
-				ft_str_fixlen
+				ft_str_fixlen	throw_error
 
 MEM_DIR = memory/
 MEM_FUNCS = 	ft_memalloc		ft_memdel		ft_memdel		ft_memcpy \

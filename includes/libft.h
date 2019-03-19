@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/06 17:52:45 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/19 18:24:14 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdbool.h>
+
+# include "colors.h"
 
 # define BUFF_SIZE			512
 # define MAX_FD				4096
@@ -258,5 +260,6 @@ void				ft_printchr(int counts, char c);
 int					ft_str_fixlen(char **str, char ch, int width, int side);
 void				ft_swap(int *a, int *b);
 void				ft_swap_ptr(void **a, void **b);
+int					throw_error(const char *title, const char *err);
 
 #endif
