@@ -6,7 +6,7 @@
 /*   By: rschuppe <rschuppe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 14:45:16 by rschuppe          #+#    #+#             */
-/*   Updated: 2019/03/19 18:24:14 by rschuppe         ###   ########.fr       */
+/*   Updated: 2019/03/29 10:54:30 by rschuppe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdbool.h>
-
-# include "colors.h"
 
 # define BUFF_SIZE			512
 # define MAX_FD				4096
